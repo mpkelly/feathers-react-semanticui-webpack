@@ -3,7 +3,7 @@
   "description": "",
   "version": "0.0.0",
   "homepage": "",
-  "main": "src/",
+  "main": "server/",
   "keywords": [
     "feathers"
   ],
@@ -17,7 +17,7 @@
   },
   "scripts": {
     "test": "npm run jshint && npm run mocha",
-    "jshint": "jshint src/. test/. --config",
+    "jshint": "jshint server/. test/. --config",
     "start": "babel-node server/",
     "mocha": "mocha test/ --compilers js:babel-core/register --recursive"
   },

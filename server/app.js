@@ -29,11 +29,14 @@ app.use(require('webpack-hot-middleware')(compiler));
 
 app.configure(configuration(path.join(__dirname, '..')));
 
+console.log(app.get('public'));
+console.log(app.get('.'));
+
 app.use(compress())
   .options('*', cors())
   .use(cors())
-  .use(favicon( path.join(app.get('client'), 'favicon.ico') ))
-  .use('/', serveStatic( app.get('client') ))
+  .use(favicon( path.join(app.get('public'), 'favicon.ico') ))
+  .use('/', serveStatic( app.get('public') ))
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: true }))
   .configure(hooks())
