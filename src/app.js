@@ -29,9 +29,6 @@ app.use(require('webpack-hot-middleware')(compiler));
 
 app.configure(configuration(path.join(__dirname, '..')));
 
-console.log(app.get('public'));
-console.log(app.get('.'));
-
 app.use(compress())
   .options('*', cors())
   .use(cors())
